@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daladala Guide - Demo & Features</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+      color: #1f2937;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .feature {
+      background: #f8fafc;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 12px;
+      border-left: 4px solid #3b82f6;
+    }
+    .feature h3 {
+      color: #1e40af;
+      margin-top: 0;
+    }
+    .demo-link {
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 1rem 0;
+      transition: all 0.2s ease;
+    }
+    .demo-link:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+    .screenshot {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 1rem 0;
+    }
+    .code {
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🚌 Daladala Guide - Demo & Features</h1>
+    <p>Your comprehensive guide to Dar es Salaam's public transport system</p>
+    <a href="index.html" class="demo-link">🚀 Launch the App</a>
+  </div>
+
+  <div class="feature">
+    <h3>🗺️ Interactive Map Interface</h3>
+    <p>The app features a beautiful, interactive map powered by Leaflet.js and OpenStreetMap. Routes are displayed with colored polylines and numbered stop markers.</p>
+    <ul>
+      <li><strong>Zoom & Pan:</strong> Navigate around Dar es Salaam easily</li>
+      <li><strong>Stop Markers:</strong> Click on any stop to see route information</li>
+      <li><strong>Route Lines:</strong> Color-coded routes for easy identification</li>
+      <li><strong>Auto-fit:</strong> Map automatically adjusts to show entire routes</li>
+    </ul>
+  </div>
+
+  <div class="feature">
+    <h3>🔍 Smart Route Search</h3>
+    <p>Find the best routes between any two stops in Dar es Salaam. The app uses intelligent algorithms to suggest optimal routes.</p>
+    <ul>
+      <li><strong>Start & End:</strong> Enter your starting and destination stops</li>
+      <li><strong>Smart Matching:</strong> Fuzzy search for stop names</li>
+      <li><strong>Route Scoring:</strong> Shorter routes are prioritized</li>
+      <li><strong>Multiple Options:</strong> See all available routes</li>
+    </ul>
+  </div>
+
+  <div class="feature">
+    <h3>⭐ Favorite Routes</h3>
+    <p>Save your frequently used routes for quick access. Favorites are stored locally in your browser.</p>
+    <ul>
+      <li><strong>Quick Access:</strong> One-click route plotting</li>
+      <li><strong>Local Storage:</strong> Your favorites are saved locally</li>
+      <li><strong>Easy Management:</strong> Add/remove favorites with heart button</li>
+      <li><strong>Persistent:</strong> Favorites survive browser restarts</li>
+    </ul>
+  </div>
+
+  <div class="feature">
+    <h3>📝 Contribute New Data</h3>
+    <p>Help improve the daladala database by adding new routes and stops. The app includes a user-friendly contribution form.</p>
+    <ul>
+      <li><strong>New Routes:</strong> Add complete new routes with custom colors</li>
+      <li><strong>New Stops:</strong> Add stops to existing routes</li>
+      <li><strong>Form Validation:</strong> Ensures data quality</li>
+      <li><strong>Community Driven:</strong> Build the database together</li>
+    </ul>
+  </div>
+
+  <div class="feature">
+    <h3>📱 Responsive Design</h3>
+    <p>Works perfectly on all devices - from mobile phones to desktop computers. The interface adapts to your screen size.</p>
+    <ul>
+      <li><strong>Mobile First:</strong> Optimized for mobile devices</li>
+      <li><strong>Touch Friendly:</strong> Large buttons and touch targets</li>
+      <li><strong>Adaptive Layout:</strong> Sidebar moves above map on small screens</li>
+      <li><strong>Fast Loading:</strong> Optimized for mobile networks</li>
+    </ul>
+  </div>
+
+  <div class="feature">
+    <h3>💾 Data Management</h3>
+    <p>Export your data, import new routes, and manage the daladala database efficiently.</p>
+    <ul>
+      <li><strong>CSV Export:</strong> Download route data for editing</li>
+      <li><strong>Data Import:</strong> Load new route data</li>
+      <li><strong>Local Caching:</strong> Geocoding results are cached</li>
+      <li><strong>Offline Capable:</strong> Works without constant internet</li>
+    </ul>
+  </div>
+
+  <div class="feature">
+    <h3>🚀 Getting Started</h3>
+    <p>Ready to explore Dar es Salaam's daladala routes? Here's how to get started:</p>
+    <ol>
+      <li><strong>Launch the App:</strong> Click the button above to open the main application</li>
+      <li><strong>Select a Route:</strong> Choose from the dropdown menu of available routes</li>
+      <li><strong>Plot Route:</strong> Click "Plot Route" to see it on the map</li>
+      <li><strong>Explore:</strong> Zoom, pan, and click on stops to learn more</li>
+      <li><strong>Search:</strong> Use the search feature to find routes between stops</li>
+      <li><strong>Contribute:</strong> Add new routes and stops using the contribute form</li>
+    </ol>
+  </div>
+
+  <div class="feature">
+    <h3>🔧 Technical Features</h3>
+    <p>The app is built with modern web technologies for the best performance and user experience.</p>
+    <ul>
+      <li><strong>Modern JavaScript:</strong> ES6+ features for better performance</li>
+      <li><strong>CSS Grid & Flexbox:</strong> Modern layout techniques</li>
+      <li><strong>Progressive Enhancement:</strong> Works even if JavaScript is disabled</li>
+      <li><strong>Accessibility:</strong> Screen reader friendly and keyboard navigable</li>
+    </ul>
+  </div>
+
+  <div class="feature">
+    <h3>📊 Current Route Coverage</h3>
+    <p>The app currently includes 10 major routes covering key areas of Dar es Salaam:</p>
+    <div class="code">
+R1: Mbezi - Makumbusho (19 stops)
+R2: Posta - Mwenge (5 stops)
+R3: Mbezi - City Centre (6 stops)
+R4: Kariakoo - Mbezi (7 stops)
+R5: Msasani - City Centre (4 stops)
+R6: Mikocheni - Posta (5 stops)
+R7: Upanga - Mwenge (5 stops)
+R8: Ilala - Mbezi (4 stops)
+R9: Temeke - Posta (3 stops)
+R10: Mbagala - City Centre (4 stops)
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="index.html" class="demo-link">🚀 Launch the App Now</a>
+    <p style="margin-top: 1rem; color: #6b7280;">
+      Experience the future of public transport navigation in Dar es Salaam!
+    </p>
+  </div>
+</body>
+</html>

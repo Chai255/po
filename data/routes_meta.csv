@@ -1,0 +1,11 @@
+route_id,color,notes
+R1,#22c55e,User supplied stops for Mbezi - Makumbusho
+R2,#ef4444,Skeleton list for Posta - Mwenge
+R3,#3b82f6,Main route from Mbezi to City Centre via Ubungo
+R4,#8b5cf6,Route connecting Kariakoo to Mbezi via Posta
+R5,#06b6d4,Coastal route from Msasani to City Centre
+R6,#f59e0b,Route from Mikocheni to Posta via Masaki
+R7,#ec4899,Route from Upanga to Mwenge via City Centre
+R8,#84cc16,Route from Ilala to Mbezi via City Centre
+R9,#f97316,Route from Temeke to Posta via Kariakoo
+R10,#6366f1,Route from Mbagala to City Centre via Temeke

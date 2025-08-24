@@ -1,0 +1,63 @@
+route_id,route_name,stop_order,stop_name
+R1,Mbezi - Makumbusho,1,Mbezi
+R1,Mbezi - Makumbusho,2,Kwa msuguri
+R1,Mbezi - Makumbusho,3,temboni
+R1,Mbezi - Makumbusho,4,suka
+R1,Mbezi - Makumbusho,5,stopover
+R1,Mbezi - Makumbusho,6,kimara mwisho
+R1,Mbezi - Makumbusho,7,korogwe
+R1,Mbezi - Makumbusho,8,bucha
+R1,Mbezi - Makumbusho,9,baruti
+R1,Mbezi - Makumbusho,10,kona
+R1,Mbezi - Makumbusho,11,kibo
+R1,Mbezi - Makumbusho,12,ubungo maji
+R1,Mbezi - Makumbusho,13,njia panda ya chuo
+R1,Mbezi - Makumbusho,14,kivulini
+R1,Mbezi - Makumbusho,15,mlimani city
+R1,Mbezi - Makumbusho,16,lufungila
+R1,Mbezi - Makumbusho,17,mwenge
+R1,Mbezi - Makumbusho,18,sayansi
+R1,Mbezi - Makumbusho,19,makumbusho
+R2,Posta - Mwenge,1,Posta
+R2,Posta - Mwenge,2,Kamata
+R2,Posta - Mwenge,3,Fire
+R2,Posta - Mwenge,4,Morocco
+R2,Posta - Mwenge,5,Mwenge
+R3,Mbezi - City Centre,1,Mbezi
+R3,Mbezi - City Centre,2,Kimara
+R3,Mbezi - City Centre,3,Ubungo
+R3,Mbezi - City Centre,4,Tegeta
+R3,Mbezi - City Centre,5,Mwenge
+R3,Mbezi - City Centre,6,City Centre
+R4,Kariakoo - Mbezi,1,Kariakoo
+R4,Kariakoo - Mbezi,2,Posta
+R4,Kariakoo - Mbezi,3,Fire
+R4,Kariakoo - Mbezi,4,Morocco
+R4,Kariakoo - Mbezi,5,Mwenge
+R4,Kariakoo - Mbezi,6,Ubungo
+R4,Kariakoo - Mbezi,7,Mbezi
+R5,Msasani - City Centre,1,Msasani
+R5,Msasani - City Centre,2,Oyster Bay
+R5,Msasani - City Centre,3,Masaki
+R5,Msasani - City Centre,4,City Centre
+R6,Mikocheni - Posta,1,Mikocheni
+R6,Mikocheni - Posta,2,Masaki
+R6,Mikocheni - Posta,3,Oyster Bay
+R6,Mikocheni - Posta,4,City Centre
+R6,Mikocheni - Posta,5,Posta
+R7,Upanga - Mwenge,1,Upanga
+R7,Upanga - Mwenge,2,City Centre
+R7,Upanga - Mwenge,3,Posta
+R7,Upanga - Mwenge,4,Kamata
+R7,Upanga - Mwenge,5,Mwenge
+R8,Ilala - Mbezi,1,Ilala
+R8,Ilala - Mbezi,2,City Centre
+R8,Ilala - Mbezi,3,Ubungo
+R8,Ilala - Mbezi,4,Mbezi
+R9,Temeke - Posta,1,Temeke
+R9,Temeke - Posta,2,Kariakoo
+R9,Temeke - Posta,3,Posta
+R10,Mbagala - City Centre,1,Mbagala
+R10,Mbagala - City Centre,2,Temeke
+R10,Mbagala - City Centre,3,Kariakoo
+R10,Mbagala - City Centre,4,City Centre

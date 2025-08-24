@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daladala Guide - Dar es Salaam Public Transport</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <!-- PapaParse for CSV -->
+  <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-content">
+      <div class="logo">
+        <i class="fas fa-bus"></i>
+        <h1>Daladala Guide</h1>
+      </div>
+      <p class="subtitle">Your guide to Dar es Salaam's public transport</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls-panel">
+      <div class="control-group">
+        <div class="route-selector">
+          <label for="routeSelect">
+            <i class="fas fa-route"></i>
+            Select Route
+          </label>
+          <select id="routeSelect">
+            <option value="">Choose a route...</option>
+          </select>
+          <button id="plotBtn" class="btn btn-primary">
+            <i class="fas fa-map-marked-alt"></i>
+            Plot Route
+          </button>
+          <button id="clearBtn" class="btn btn-secondary">
+            <i class="fas fa-eraser"></i>
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="search-panel">
+          <h3><i class="fas fa-search"></i> Find Routes</h3>
+          <div class="search-inputs">
+            <div class="input-group">
+              <label for="startInput">From:</label>
+              <input id="startInput" placeholder="Starting stop..." />
+            </div>
+            <div class="input-group">
+              <label for="endInput">To:</label>
+              <input id="endInput" placeholder="Destination stop..." />
+            </div>
+            <button id="suggestBtn" class="btn btn-success">
+              <i class="fas fa-lightbulb"></i>
+              Find Routes
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="favorites-panel">
+          <h3><i class="fas fa-heart"></i> Favorite Routes</h3>
+          <div id="favoritesList" class="favorites-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-content">
+      <div id="map" class="map-container"></div>
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2 id="routeTitle">No route selected</h2>
+          <div class="route-actions">
+            <button id="favoriteBtn" class="btn-icon" title="Add to favorites">
+              <i class="far fa-heart"></i>
+            </button>
+            <button id="shareBtn" class="btn-icon" title="Share route">
+              <i class="fas fa-share-alt"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="route-info">
+          <div id="routeStats" class="route-stats"></div>
+          <div class="stops-container">
+            <h3><i class="fas fa-map-pin"></i> Stops</h3>
+            <ol id="stopList" class="stops-list"></ol>
+          </div>
+        </div>
+
+        <div class="contribute-section">
+          <h3><i class="fas fa-plus-circle"></i> Contribute</h3>
+          <p>Help improve our data by adding new stops or routes!</p>
+          <button id="contributeBtn" class="btn btn-outline">
+            <i class="fas fa-edit"></i>
+            Add New Data
+          </button>
+        </div>
+
+        <div id="log" class="log-container"></div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Contribute Modal -->
+  <div id="contributeModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-plus-circle"></i> Contribute New Data</h2>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-tabs">
+          <button class="tab-btn active" data-tab="route">New Route</button>
+          <button class="tab-btn" data-tab="stop">New Stop</button>
+        </div>
+        
+        <div id="routeTab" class="tab-content active">
+          <form id="newRouteForm">
+            <div class="form-group">
+              <label for="newRouteId">Route ID:</label>
+              <input type="text" id="newRouteId" placeholder="e.g., R3" required>
+            </div>
+            <div class="form-group">
+              <label for="newRouteName">Route Name:</label>
+              <input type="text" id="newRouteName" placeholder="e.g., Mbezi - City Centre" required>
+            </div>
+            <div class="form-group">
+              <label for="newRouteColor">Color:</label>
+              <input type="color" id="newRouteColor" value="#3b82f6">
+            </div>
+            <div class="form-group">
+              <label for="newRouteNotes">Notes:</label>
+              <textarea id="newRouteNotes" placeholder="Any additional information..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Route</button>
+          </form>
+        </div>
+        
+        <div id="stopTab" class="tab-content">
+          <form id="newStopForm">
+            <div class="form-group">
+              <label for="newStopRoute">Route:</label>
+              <select id="newStopRoute" required></select>
+            </div>
+            <div class="form-group">
+              <label for="newStopName">Stop Name:</label>
+              <input type="text" id="newStopName" placeholder="e.g., New Stop" required>
+            </div>
+            <div class="form-group">
+              <label for="newStopOrder">Order:</label>
+              <input type="number" id="newStopOrder" placeholder="e.g., 5" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Stop</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Daladala Guide. Built with Leaflet + PapaParse. Geocoding by Nominatim.</p>
+      <div class="footer-links">
+        <a href="#" id="exportData">Export Data</a>
+        <a href="#" id="importData">Import Data</a>
+        <a href="#" id="aboutLink">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
